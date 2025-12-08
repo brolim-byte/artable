@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta author="Bárbara Rolim, Greici Camargo, Lucas de Oliveira e Thayná Soares"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Orçamento Personalizado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/estilo.css">
+    <script src="modoescuro.js"></script>
+  <script>
+function modoEscuro() {
+    document.body.classList.toggle("dark");
+}
+
+// Sistema de avaliação com estrelas
+document.addEventListener('DOMContentLoaded', function() {
+    const estrelas = document.querySelectorAll('.estrela');
+    const avaliacaoInput = document.getElementById('avaliacaoInput');
+
+    estrelas.forEach((estrela, index) => {
+        estrela.addEventListener('click', function() {
+            const rating = index + 1;
+            atualizarEstrelas(rating);
+            avaliacaoInput.value = rating;
+        });
+    });
+
+    function atualizarEstrelas(valor) {
+        estrelas.forEach((estrela, index) => {
+            if (index < valor) {
+                estrela.classList.add('ativa');
+            } else {
+                estrela.classList.remove('ativa');
+            }
+        });
+    }
+
+    // Validação de campos obrigatórios
+    document.getElementById('btnEnviar').addEventListener('click', function() {
+        validarFormulario();
+    });
+
+    function validarFormulario() {
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const endereco = document.getElementById('endereco').value.trim();
+        const numero = document.getElementById('numero').value.trim();
+        const tipoProjeto = document.getElementById('tipoProjeto').value;
+        const mensagemErro = document.getElementById('mensagemErro');
+        
+        const camposFaltando = [];
+
+        if (!nome) camposFaltando.push('Nome completo');
+        if (!email) camposFaltando.push('E-mail');
+        if (!telefone) camposFaltando.push('Telefone');
+        if (!endereco) camposFaltando.push('Endereço');
+        if (!numero) camposFaltando.push('Núm.');
+        if (!tipoProjeto) camposFaltando.push('Tipo de projeto');
+
+        if (camposFaltando.length > 0) {
+            mensagemErro.textContent = 'Está faltando preencher os seguintes campos obrigatórios: ' + camposFaltando.join(', ');
+            mensagemErro.style.display = 'block';
+            return false;
+        } else {
+            mensagemErro.style.display = 'none'
+            alert('Formulário enviado com sucesso!');
+            return true;
+        }
+    }
+});
+</script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html"><img src="img/icon.png" alt="Logo"></a>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="ilustradores.html">Portfólio</a></li>
+        <li><a href="manutencao.html">Depoimentos</a></li>
+        <li><a href="manutencao.html">Contato</a></li>
+         <button id="trocarTema" onclick="modoEscuro()">Trocar Tema</button>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container">
+    <h1>Solicite Seu Orçamento Personalizado</h1>
+
+    <div class="formulario">
+
+      <div class="col-esq">
+        <input type="text" id="nome" placeholder="Nome completo">
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="text" id="telefone" placeholder="Telefone">
+        <input type="text" id="endereco" placeholder="Endereço">
+        <input type="text" id="numero" placeholder="Núm.">
+        <input type="text" id="complemento" placeholder="Complemento">
+        </div>
+      <div class="col-dir">
+        <select id="tipoProjeto">
+          <option value="">Tipo de projeto</option>
+          <option value="Ilustração simples">Ilustração simples</option>
+          <option value="Aquarela">Aquarela</option>
+          <option value="Caricatura">Caricatura</option>
+          <option value="Arte estilo Quadrinho">Arte estilo Quadrinho</option>
+          <option value="Retrato">Retrato</option>
+          <option value="Fanart">Fanart</option>
+          <option value="Arte estilo mangá">Arte estilo mangá</option>
+        </select>
+
+        <textarea placeholder="Especificações"></textarea>
+
+        <div class="avaliacao">
+          <p class="texto-avaliacao">Como você avalia nosso site?</p>
+          <div class="estrelas-container" id="estrelasContainer">
+            <span class="estrela" data-rating="1">⭐</span>
+            <span class="estrela" data-rating="2">⭐</span>
+            <span class="estrela" data-rating="3">⭐</span>
+            <span class="estrela" data-rating="4">⭐</span>
+            <span class="estrela" data-rating="5">⭐</span>
+          </div>
+          <input type="hidden" name="avaliacao" id="avaliacaoInput" value="">
+        </div>
+
+        <div id="mensagemErro" class="mensagem-erro"></div>
+        <button type="button" class="btn-enviar" id="btnEnviar">Enviar mensagem</button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

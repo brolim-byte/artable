@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta author="Bárbara Rolim, Greici Camargo, Lucas de Oliveira e Thayná Soares"/>
+  
+  <title>Artable - Página Inicial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/estilo.css"/>
+  <script src="modoescuro.js"></script>
+  <script>
+function modoEscuro() {
+    document.body.classList.toggle("dark");
+}
+</script>
+  
+</head>
+<body> 
+    <header class="topbar">
+    <div class="logo">
+        <img src="img/icon.png" alt="Logo"/>  
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="ilustradores.html">Portfólio</a></li>
+        <li><a href="manutencao.html">Depoimentos</a></li>
+        <li><a href="manutencao.html">Contato</a></li>
+      <button id="trocarTema" onclick="modoEscuro()">Trocar Tema</button>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section class="hero-text">
+      <h1>Transforme suas<br>ideias em<br>ilustrações únicas</h1>
+      <p class="subtitle">
+        Retratos, fanarts e artes<br>
+        personalizadas para você
+      </p>
+
+      <div class="hero-buttons">
+        <a href="orcamento.html" class="btn btn-primary">Quero um orçamento</a>
+        <a href="ilustradores.html" class="btn btn-secondary">Ver Portfólio</a>
+      </div>
+    </section>
+
+    <section class="hero-image">
+      
+      <img src="img/ilustradora.png" alt="Artista desenhando em tablet" />
+    </section>
+  </main>
+
+
+
+
+</body>
+</html>
