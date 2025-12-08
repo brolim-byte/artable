@@ -60,7 +60,7 @@ O site possui um botão para alternar entre modo claro e escuro, localizado no m
 
 ## 👥 Desenvolvido Por
 
-Este projeto foi desenvolvido por **Bárbara Rolim** e grupo:
+Este projeto foi desenvolvido por:
 
 - **Bárbara Rolim**
 - **Greici Camargo**
