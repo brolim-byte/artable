@@ -1,4 +1,3 @@
-
 // Variáveis globais
 let tamanhoAtual = 16;
 

@@ -427,6 +427,7 @@ select {
 .btn-enviar {
   padding: 14px 26px;
   width: 300px;
+  margin-top: 70px;
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
@@ -471,6 +472,7 @@ select {
   font-weight: 60;
   color: #47494a;
   margin-bottom: 10px;
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -601,4 +603,207 @@ button {
     font-size: 16px;
     margin-right: 5px;
     cursor: pointer;
+}
+
+/* Botões de aumentar e diminuir fonte */
+#aumentar, #diminuir {
+    padding: 10px 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid #1f344b;
+    background: #ffffff;
+    color: #1f344b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+    min-width: 48px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#aumentar:hover, #diminuir:hover {
+    background: #1f344b;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(31, 52, 75, 0.3);
+}
+
+#aumentar:active, #diminuir:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modo escuro - Botões de fonte */
+body.dark #aumentar, body.dark #diminuir {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+}
+
+body.dark #aumentar:hover, body.dark #diminuir:hover {
+    background: #1f344b;
+    color: #ffffff;
+    border-color: #1f344b;
+    box-shadow: 0 4px 8px rgba(31, 52, 75, 0.5);
+}
+
+/*DESIGN DA TELA TABELA*/
+
+.container-tabela {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.container-tabela h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2933;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.subtitulo-tabela {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 40px;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  margin: 40px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.tabela-projetos {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 0.95rem;
+}
+
+.tabela-projetos thead {
+  background: #1f344b;
+  color: #ffffff;
+}
+
+.tabela-projetos th {
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tabela-projetos tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.tabela-projetos tbody tr:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.tabela-projetos tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabela-projetos td {
+  padding: 20px;
+  color: #374151;
+  vertical-align: top;
+}
+
+.tabela-projetos td strong {
+  color: #1f344b;
+  font-weight: 600;
+}
+
+.info-extra {
+  margin: 40px 0;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Modo escuro - Tabela */
+body.dark .container-tabela h1 {
+  color: #fff;
+}
+
+body.dark .subtitulo-tabela {
+  color: #d1d5db;
+}
+
+body.dark .tabela-wrapper {
+  background: #1f2937;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .tabela-projetos {
+  background: #1f2937;
+}
+
+body.dark .tabela-projetos thead {
+  background: #1f344b;
+}
+
+body.dark .tabela-projetos tbody tr {
+  border-bottom-color: #374151;
+}
+
+body.dark .tabela-projetos tbody tr:hover {
+  background-color: #374151;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .tabela-projetos td {
+  color: #e5e7eb;
+}
+
+body.dark .tabela-projetos td strong {
+  color: #fff;
+}
+
+body.dark .info-extra {
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+/* Responsividade - Tabela */
+@media (max-width: 900px) {
+  .container-tabela {
+    padding: 40px 20px 60px;
+  }
+
+  .container-tabela h1 {
+    font-size: 2rem;
+  }
+
+  .tabela-projetos {
+    font-size: 0.85rem;
+  }
+
+  .tabela-projetos th,
+  .tabela-projetos td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabela-projetos {
+    font-size: 0.8rem;
+  }
+
+  .tabela-projetos th,
+  .tabela-projetos td {
+    padding: 10px 8px;
+  }
 }

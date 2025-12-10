@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta author="Bárbara Rolim, Greici Camargo, Lucas de Oliveira e Thayná Soares"/>
+  
+  <title>Tipos de Projeto - Artable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/estilo.css"/>
+    <script src="js/modoescuro.js"></script>
+    <script src="js/fonte.js"></script>
+  <script>
+function modoEscuro() {
+    document.body.classList.toggle("dark");
+}
+
+// Tornar linhas da tabela clicáveis
+document.addEventListener('DOMContentLoaded', function() {
+    const linhas = document.querySelectorAll('.tabela-projetos tbody tr');
+    
+    linhas.forEach(function(linha) {
+        linha.style.cursor = 'pointer';
+        
+        linha.addEventListener('click', function() {
+            window.location.href = 'orcamento.html';
+        });
+        
+        // Efeito visual ao passar o mouse
+        linha.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.01)';
+        });
+        
+        linha.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">
+    
+      <a href="index.html"><img src="img/icon.png" alt="Logo"></a>
+        </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="ilustradores.html">Portfólio</a></li>
+        <li><a href="manutencao.html">Depoimentos</a></li>
+        <li><a href="manutencao.html">Contato</a></li>
+         <button id="trocarTema" onclick="modoEscuro()">Trocar Tema</button>
+         <button id="aumentar">A+</button>
+         <button id="diminuir">A-</button>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container-tabela">
+    <h1>Tipos de Projeto</h1>
+    <p class="subtitulo-tabela">Clique em uma opção para solicitar um orçamento</p>
+
+    <div class="tabela-wrapper">
+      <table class="tabela-projetos">
+        <thead>
+          <tr>
+            <th>Tipo de Projeto</th>
+            <th>Descrição</th>
+            <th>Estilo</th>
+            <th>Prazo</th>
+            <th>Preço a partir de</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="linha-clicavel">
+            <td><strong>Retrato</strong></td>
+            <td>Ilustração personalizada de pessoa ou pet</td>
+            <td>Aquarela, Realista, Estilizado</td>
+            <td>5-7 dias</td>
+            <td>R$ 150,00</td>
+          </tr>
+          <tr class="linha-clicavel">
+            <td><strong>Fanart</strong></td>
+            <td>Arte baseada em personagens de séries, filmes ou jogos</td>
+            <td>Estilizado, Realista</td>
+            <td>7-10 dias</td>
+            <td>R$ 200,00</td>
+          </tr>
+          <tr class="linha-clicavel">
+            <td><strong>Arte Personalizada</strong></td>
+            <td>Criação única conforme sua ideia e referências</td>
+            <td>Qualquer estilo</td>
+            <td>10-14 dias</td>
+            <td>R$ 250,00</td>
+          </tr>
+          <tr class="linha-clicavel">
+            <td><strong>Estilo Aquarela</strong></td>
+            <td>Ilustração com efeito de pintura aquarela digital</td>
+            <td>Aquarela</td>
+            <td>7-10 dias</td>
+            <td>R$ 180,00</td>
+          </tr>
+          <tr class="linha-clicavel">
+            <td><strong>Estilo Realista</strong></td>
+            <td>Ilustração com alta fidelidade e detalhes realistas</td>
+            <td>Realista</td>
+            <td>10-15 dias</td>
+            <td>R$ 300,00</td>
+          </tr>
+          <tr class="linha-clicavel">
+            <td><strong>Ilustração de Personagem</strong></td>
+            <td>Criação de personagem original do zero</td>
+            <td>Estilizado, Realista</td>
+            <td>12-18 dias</td>
+            <td>R$ 350,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-extra">
+      <p><strong>Nota:</strong> Os preços podem variar conforme a complexidade do projeto. Clique em qualquer opção acima para solicitar um orçamento personalizado.</p>
+    </div>
+  </main>
+
+</body>
+</html>

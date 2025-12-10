@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const telefone = document.getElementById('telefone').value.trim();
         const endereco = document.getElementById('endereco').value.trim();
         const numero = document.getElementById('numero').value.trim();
-        const tipoProjeto = document.getElementById('tipoProjeto').value;
+        const tipoProjetoElement = document.getElementById('tipoProjeto');
+        const tipoProjeto = tipoProjetoElement ? tipoProjetoElement.value : '';
         const mensagemErro = document.getElementById('mensagemErro');
         
         const camposFaltando = [];
@@ -62,14 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!telefone) camposFaltando.push('Telefone');
         if (!endereco) camposFaltando.push('Endereço');
         if (!numero) camposFaltando.push('Núm.');
-        if (!tipoProjeto) camposFaltando.push('Tipo de projeto');
+        if (tipoProjetoElement && !tipoProjeto) camposFaltando.push('Tipo de projeto');
 
         if (camposFaltando.length > 0) {
             mensagemErro.textContent = 'Está faltando preencher os seguintes campos obrigatórios: ' + camposFaltando.join(', ');
             mensagemErro.style.display = 'block';
             return false;
         } else {
-            mensagemErro.style.display = 'none'
+            mensagemErro.style.display = 'none';
             alert('Formulário enviado com sucesso!');
             return true;
         }
@@ -110,18 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <input type="text" id="complemento" placeholder="Complemento">
         </div>
       <div class="col-dir">
-        <select id="tipoProjeto">
-          <option value="">Tipo de projeto</option>
-          <option value="Ilustração simples">Ilustração simples</option>
-          <option value="Aquarela">Aquarela</option>
-          <option value="Caricatura">Caricatura</option>
-          <option value="Arte estilo Quadrinho">Arte estilo Quadrinho</option>
-          <option value="Retrato">Retrato</option>
-          <option value="Fanart">Fanart</option>
-          <option value="Arte estilo mangá">Arte estilo mangá</option>
-        </select>
-
-        <textarea placeholder="Especificações"></textarea>
+        
+<textarea placeholder="Especificações"></textarea>
 
         <div class="avaliacao">
           <p class="texto-avaliacao">Como você avalia nosso site?</p>
