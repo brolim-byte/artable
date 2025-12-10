@@ -12,12 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/estilo.css"/>
-    <script src="modoescuro.js"></script>
+    <script src="js/modoescuro.js"></script>
+    <script src="js/fonte.js"></script>
   <script>
 function modoEscuro() {
     document.body.classList.toggle("dark");
 }
 </script>
+
 </head>
 <body>
 
@@ -33,6 +35,9 @@ function modoEscuro() {
         <li><a href="manutencao.html">Depoimentos</a></li>
         <li><a href="manutencao.html">Contato</a></li>
          <button id="trocarTema" onclick="modoEscuro()">Trocar Tema</button>
+         <button id="aumentar">A+</button>
+         <button id="diminuir">A-</button>
+       
       </ul>
     </nav>
   </header>
@@ -43,7 +48,7 @@ function modoEscuro() {
     <div class="texto">
       <h1>Quem sou eu?</h1>
 
-      <p>
+      <p id="texto">
         Sou Ana, ilustradora digital há quatro anos. Crio
         artes personalizadas para pessoas e marcas que
         buscam algo único, com um estilo marcante e cheio
