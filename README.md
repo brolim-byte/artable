@@ -28,6 +28,7 @@ O **Artable** é um site que oferece serviços de ilustração personalizada, in
 Artable/
 ├── index.html              # Página inicial
 ├── ilustradores.html       # Página de portfólio
+├── tabela.html             # Tabela com os tipos de projeto
 ├── orcamento.html          # Formulário de orçamento
 ├── apresentacaoana.html    # Apresentação da ilustradora Ana
 ├── apresentacaoluisa.html  # Apresentação da ilustradora Luisa
@@ -37,6 +38,7 @@ Artable/
 │   └── estilo.css          # Estilos principais
 ├── js/
 │   └── modoescuro.js      # Script do modo escuro
+│   └── fonte.js           # Script para edição do tamanho da fonte
 └── img/                    # Imagens e assets
 ```
 
