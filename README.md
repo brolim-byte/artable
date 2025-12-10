@@ -54,7 +54,7 @@ git clone https://github.com/brolim-byte/artable.git
 3. Navegue pelas páginas:
    - Página inicial: `index.html`
    - Portfólio: `ilustradores.html`
-   - Solicitar orçamento: `orcamento.html`
+   - Solicitar orçamento: `tabela.html`
 
 ## Modo Escuro
 
